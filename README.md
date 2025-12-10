@@ -41,7 +41,25 @@ pip install -r requirements.txt
 python app.py
 ```
 
+Para modo de desarrollo con debug activado:
+```bash
+export FLASK_DEBUG=True  # Linux/Mac
+python app.py
+```
+
+O en Windows:
+```cmd
+set FLASK_DEBUG=True
+python app.py
+```
+
 Luego abrir en el navegador: `http://localhost:5000`
+
+**Nota de producción:** Para uso en producción, use un servidor WSGI como gunicorn:
+```bash
+pip install gunicorn
+gunicorn -w 4 -b 0.0.0.0:5000 app:app
+```
 
 ## Características
 
