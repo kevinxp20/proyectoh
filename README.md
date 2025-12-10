@@ -2,10 +2,14 @@
 
 Este repositorio contiene herramientas y documentación para ayudar en la conversión de código .NET/C# a Python.
 
+> **¿Nuevo aquí?** Lee primero: [QUICK_START.md](QUICK_START.md) - Responde la pregunta: "¿Cómo proporcionar archivos que no están en el repositorio?"
+
 ## 📋 Contenido
 
-- **CONVERSION_GUIDE.md**: Guía completa de conversión con ejemplos y mejores prácticas
-- **dotnet_to_python_converter.py**: Script de Python para asistir en la conversión básica
+- **[QUICK_START.md](QUICK_START.md)**: ⭐ Inicio rápido - Cómo proporcionar archivos y convertir
+- **[CONVERSION_GUIDE.md](CONVERSION_GUIDE.md)**: Guía completa de conversión con ejemplos y mejores prácticas
+- **[dotnet_to_python_converter.py](dotnet_to_python_converter.py)**: Script de Python para asistir en la conversión básica
+- **[examples/](examples/)**: Ejemplos prácticos de conversión de .NET a Python
 - **index.html**: Aplicación web de ejemplo (Marvel API)
 
 ## 🚀 Inicio Rápido
