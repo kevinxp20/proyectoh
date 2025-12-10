@@ -96,7 +96,25 @@ La versión Python incluye:
 
 ## Notas de Seguridad
 
-⚠️ Las claves de API están hardcodeadas en el código. En producción, deberían estar en variables de entorno o un archivo de configuración seguro.
+⚠️ Las claves de API están incluidas en el código por defecto (las mismas que estaban en el JavaScript original). 
+
+**Para usar tus propias claves de API**, puedes configurar variables de entorno:
+
+```bash
+export MARVEL_PUBLIC_KEY="tu_clave_publica"
+export MARVEL_PRIVATE_KEY="tu_clave_privada"
+```
+
+O en Windows:
+```cmd
+set MARVEL_PUBLIC_KEY=tu_clave_publica
+set MARVEL_PRIVATE_KEY=tu_clave_privada
+```
+
+**Obtener claves de Marvel API:**
+1. Regístrate en https://developer.marvel.com/
+2. Crea una cuenta y obtén tus claves
+3. Usa las variables de entorno mencionadas arriba
 
 ## Licencia
 

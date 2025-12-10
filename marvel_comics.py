@@ -9,6 +9,7 @@ import time
 import requests
 import json
 import sys
+import os
 
 
 class MarvelComicsAPI:
@@ -114,9 +115,10 @@ class MarvelComicsAPI:
 def main():
     """Main function to run the Marvel Comics search"""
     
-    # Marvel API credentials (same as in the original JavaScript code)
-    PUBLIC_KEY = "c9b342b95e7fdb1c01efcea39f8e65e7"
-    PRIVATE_KEY = "9d15e7cf75996f595ce74aa89ebc089fb19b9e34"
+    # Marvel API credentials
+    # Can be overridden with environment variables for security
+    PUBLIC_KEY = os.getenv('MARVEL_PUBLIC_KEY', 'c9b342b95e7fdb1c01efcea39f8e65e7')
+    PRIVATE_KEY = os.getenv('MARVEL_PRIVATE_KEY', '9d15e7cf75996f595ce74aa89ebc089fb19b9e34')
     
     # Get character ID from command line or prompt user
     if len(sys.argv) > 1:
