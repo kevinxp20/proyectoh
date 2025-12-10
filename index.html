@@ -64,8 +64,22 @@
         function loadTasks() {
             const saved = localStorage.getItem('tasks');
             if (saved) {
-                tasks = JSON.parse(saved);
-                taskIdCounter = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) + 1 : 0;
+                try {
+                    tasks = JSON.parse(saved);
+                    if (tasks.length > 0) {
+                        let maxId = 0;
+                        for (let i = 0; i < tasks.length; i++) {
+                            if (tasks[i].id > maxId) {
+                                maxId = tasks[i].id;
+                            }
+                        }
+                        taskIdCounter = maxId + 1;
+                    }
+                } catch (e) {
+                    tasks = [];
+                    taskIdCounter = 0;
+                    localStorage.removeItem('tasks');
+                }
             }
             renderTasks();
         }
@@ -118,7 +132,10 @@
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+            const filterBtn = document.querySelector(`[data-filter="${filter}"]`);
+            if (filterBtn) {
+                filterBtn.classList.add('active');
+            }
             renderTasks();
         }
 
