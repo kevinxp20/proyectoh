@@ -66,7 +66,8 @@ class DotNetToPythonConverter:
                         self.convert_type(t.strip()) 
                         for t in inner_types.split(',')
                     ])
-                    self.imports.add('from typing import List, Dict, Set, Iterable')
+                    # Solo agregar el import del tipo específico usado
+                    self.imports.add(f'from typing import {python_container}')
                     return f"{python_container}[{inner_python}]"
         
         # Tipos simples
